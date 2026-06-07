@@ -36,9 +36,9 @@ export function SearchBar({ value, mode, onChange, onModeChange }: SearchBarProp
           className="w-full rounded-2xl border border-emerald-200 bg-white py-3 pl-12 pr-4 text-sm text-emerald-950 shadow-sm outline-none transition focus:border-emerald-500"
         />
       </div>    
-      <p>Search By:</p> 
+     
        <div className="flex flex-wrap items-center gap-4">
-       
+        <p>Search By:</p> 
         <label className="inline-flex items-center gap-2 text-sm font-medium text-emerald-900">
           <input
             type="radio"
