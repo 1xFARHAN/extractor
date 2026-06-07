@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Pagination } from "@/components/Pagination";
 import { RequestModal } from "@/components/RequestModal";
@@ -81,34 +82,51 @@ export default function HomePage() {
           <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
             <AgricultureVectors />
           </div>
-          <div className="relative z-10 max-w-3xl space-y-4">
-            <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
-              Genom Data
-            </span>
-            <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-emerald-950 sm:text-5xl">
-              Genom Data Records
-            </h1>
-            <p className="max-w-xl text-sm leading-7 text-emerald-900/70 sm:text-base">
-              Search key descriptors with a clean agricultural data interface.
-            </p>
-            <div className="grid max-w-2xl gap-3 pt-2 sm:grid-cols-3">
-              <div className="rounded-2xl border border-emerald-100 bg-emerald-50/60 px-4 py-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                  Focus
-                </p>
-                <p className="mt-2 text-sm text-emerald-950">Trait-based retrieval</p>
+          <div className="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-center">
+            <div className="space-y-4">
+              <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
+                Genom Data
+              </span>
+              <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-emerald-950 sm:text-5xl">
+                Genom Data Records
+              </h1>
+              <p className="max-w-xl text-sm leading-7 text-emerald-900/70 sm:text-base">
+                Search key descriptors with a clean agricultural data interface.
+              </p>
+              <div className="grid max-w-2xl gap-3 pt-2 sm:grid-cols-3">
+                <div className="rounded-2xl border border-emerald-100 bg-emerald-50/60 px-4 py-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                    Focus
+                  </p>
+                  <p className="mt-2 text-sm text-emerald-950">Trait-based retrieval</p>
+                </div>
+                <div className="rounded-2xl border border-emerald-100 bg-white px-4 py-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                    Records
+                  </p>
+                  <p className="mt-2 text-sm text-emerald-950">Structured genom data</p>
+                </div>
+                <div className="rounded-2xl border border-emerald-100 bg-white px-4 py-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                    Use
+                  </p>
+                  <p className="mt-2 text-sm text-emerald-950">Research and breeding support</p>
+                </div>
               </div>
-              <div className="rounded-2xl border border-emerald-100 bg-white px-4 py-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                  Records
-                </p>
-                <p className="mt-2 text-sm text-emerald-950">Structured genom data</p>
+            </div>
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-emerald-200/80 bg-white/80 p-2 shadow-[0_22px_60px_-36px_rgba(22,101,52,0.28)]">
+              <div className="absolute inset-x-6 top-6 z-10 rounded-full bg-white/85 px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.18em] text-emerald-800 backdrop-blur">
+                MNS
               </div>
-              <div className="rounded-2xl border border-emerald-100 bg-white px-4 py-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                  Use
-                </p>
-                <p className="mt-2 text-sm text-emerald-950">Research and breeding support</p>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem]">
+                <Image
+                  src="/genom-data-building.jpeg"
+                  alt="Genom Data building"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/15 via-transparent to-white/10" />
               </div>
             </div>
           </div>

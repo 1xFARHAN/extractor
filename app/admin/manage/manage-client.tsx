@@ -91,8 +91,10 @@ export function ManageEntriesClient() {
         return;
       }
 
+      const createdEntry = result.entry;
+
       setEntries((current) =>
-        [...current, result.entry].sort((a, b) => a.serialNo - b.serialNo || a.id - b.id),
+        [...current, createdEntry].sort((a, b) => a.serialNo - b.serialNo || a.id - b.id),
       );
       setForm(initialForm);
       setMessage("Record added successfully.");
