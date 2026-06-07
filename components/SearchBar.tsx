@@ -9,10 +9,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
   return (
     <div className="space-y-3">
       <div className="relative">
-        <label htmlFor="search" className="mb-2 block text-sm font-medium text-emerald-900">
-          Trait Search
-        </label>
-        <span className="pointer-events-none absolute left-4 top-[3.35rem] -translate-y-1/2 text-emerald-500">
+        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-emerald-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -33,7 +30,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
           type="search"
           value={value}
           onChange={(event) => onChange(event.target.value)}
-          placeholder="Enter a trait to search records"
+          placeholder="Search by name and key descriptor"
           className="w-full rounded-2xl border border-emerald-200 bg-white py-3 pl-12 pr-4 text-sm text-emerald-950 shadow-sm outline-none transition focus:border-emerald-500"
         />
       </div>
