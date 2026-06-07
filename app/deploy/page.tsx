@@ -71,7 +71,7 @@ export default function DeployPage() {
               Deployment Console
             </span>
             <h1 className="text-4xl font-semibold tracking-tight text-emerald-950 sm:text-5xl">
-              Secure deployment launch.
+              Inauguration ceremory on NCG&amp;SBCAS
             </h1>
             <p className="max-w-lg text-sm leading-7 text-emerald-900/72 sm:text-base">
               Start the deployment countdown and return automatically after launch.
@@ -95,9 +95,9 @@ export default function DeployPage() {
                   type="button"
                   onClick={handleDeploy}
                   disabled={Boolean(countdown && countdown > 0) || isLaunching}
-                  className="inline-flex items-center rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:bg-emerald-300"
+                  className="inline-flex items-center rounded-full bg-emerald-700 px-14 py-5 text-lg font-semibold text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:bg-emerald-300"
                 >
-                  Deploy
+                  Launch
                 </button>
               </div>
             </div>

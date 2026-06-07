@@ -78,56 +78,19 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#dcfce7_0%,transparent_26%),linear-gradient(180deg,#f5fff8_0%,#ecfdf3_40%,#ffffff_100%)]">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
-        <section className="relative overflow-hidden rounded-[2rem] border border-emerald-200/80 bg-white/95 p-6 shadow-[0_24px_80px_-32px_rgba(22,101,52,0.22)] sm:p-8">
-          <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
-            <AgricultureVectors />
-          </div>
-          <div className="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-center">
-            <div className="space-y-4">
-              <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
-                Genom Data
-              </span>
-              <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-emerald-950 sm:text-5xl">
-                Genom Data Records
-              </h1>
-              <p className="max-w-xl text-sm leading-7 text-emerald-900/70 sm:text-base">
-                Search key descriptors with a clean agricultural data interface.
-              </p>
-              <div className="grid max-w-2xl gap-3 pt-2 sm:grid-cols-3">
-                <div className="rounded-2xl border border-emerald-100 bg-emerald-50/60 px-4 py-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                    Focus
-                  </p>
-                  <p className="mt-2 text-sm text-emerald-950">Trait-based retrieval</p>
-                </div>
-                <div className="rounded-2xl border border-emerald-100 bg-white px-4 py-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                    Records
-                  </p>
-                  <p className="mt-2 text-sm text-emerald-950">Structured genom data</p>
-                </div>
-                <div className="rounded-2xl border border-emerald-100 bg-white px-4 py-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                    Use
-                  </p>
-                  <p className="mt-2 text-sm text-emerald-950">Research and breeding support</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-[1.75rem] border border-emerald-200/80 bg-white/80 p-2 shadow-[0_22px_60px_-36px_rgba(22,101,52,0.28)]">
-              <div className="absolute inset-x-6 top-6 z-10 rounded-full bg-white/85 px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.18em] text-emerald-800 backdrop-blur">
-                MNS
-              </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem]">
-                <Image
-                  src="/genom-data-building.jpeg"
-                  alt="Genom Data building"
-                  fill
-                  priority
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/15 via-transparent to-white/10" />
-              </div>
+        <section className="relative overflow-hidden rounded-[2rem] border border-emerald-200/80 bg-white/95 p-3 shadow-[0_24px_80px_-32px_rgba(22,101,52,0.22)] sm:p-4">
+          <div className="relative aspect-[16/6] overflow-hidden rounded-[1.5rem]">
+            <Image
+              src="/genom-data-building.jpeg"
+              alt="Genom Data building"
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/25 via-transparent to-white/10" />
+            <div className="absolute inset-x-4 top-4 z-10 rounded-2xl bg-white/88 px-4 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-emerald-900 backdrop-blur sm:inset-x-8 sm:top-8 sm:text-sm">
+              National Crop Genomics and Speed Breeding Centre for Agriculture Sustainability
+              (NCG&amp;SBCAS)
             </div>
           </div>
         </section>
@@ -158,95 +121,5 @@ export default function HomePage() {
 
       {toastMessage ? <Toast message={toastMessage} onClose={() => setToastMessage("")} /> : null}
     </main>
-  );
-}
-
-function AgricultureVectors() {
-  return (
-    <svg
-      viewBox="0 0 520 360"
-      className="h-full w-full text-emerald-600 opacity-95"
-      aria-hidden="true"
-    >
-      <defs>
-        <linearGradient id="fieldGradient" x1="0%" x2="100%" y1="0%" y2="100%">
-          <stop offset="0%" stopColor="#e8f7eb" />
-          <stop offset="100%" stopColor="#a7f3d0" />
-        </linearGradient>
-        <linearGradient id="leafGradient" x1="0%" x2="100%" y1="0%" y2="100%">
-          <stop offset="0%" stopColor="#22c55e" />
-          <stop offset="100%" stopColor="#166534" />
-        </linearGradient>
-        <linearGradient id="grainGradient" x1="0%" x2="100%" y1="0%" y2="100%">
-          <stop offset="0%" stopColor="#bbf7d0" />
-          <stop offset="100%" stopColor="#4ade80" />
-        </linearGradient>
-      </defs>
-      <circle cx="390" cy="78" r="58" fill="#f0fdf4" />
-      <path
-        d="M180 302c92-94 196-134 300-120v124H146c-4-4 6-6 34-4Z"
-        fill="url(#fieldGradient)"
-      />
-      <path
-        d="M210 290c78-43 165-61 261-52"
-        fill="none"
-        stroke="#86efac"
-        strokeWidth="14"
-        strokeLinecap="round"
-      />
-      <path
-        d="M248 316c64-22 133-28 205-20"
-        fill="none"
-        stroke="#4ade80"
-        strokeWidth="12"
-        strokeLinecap="round"
-      />
-      <path
-        d="M334 228c-8-37 10-72 49-98 10 46-7 84-49 98Z"
-        fill="url(#leafGradient)"
-      />
-      <path
-        d="M322 227c-31-18-47-49-40-92 39 8 61 35 66 81"
-        fill="#34d399"
-      />
-      <path
-        d="M366 258v-88"
-        fill="none"
-        stroke="#166534"
-        strokeWidth="6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M422 235c-9-24 1-50 29-69 7 31-3 57-29 69Z"
-        fill="#16a34a"
-      />
-      <path
-        d="M409 235c-23-13-36-35-35-66 28 7 45 26 50 58"
-        fill="url(#grainGradient)"
-      />
-      <path
-        d="M438 266v-59"
-        fill="none"
-        stroke="#166534"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <g fill="none" stroke="#a7f3d0" strokeWidth="4" strokeLinecap="round">
-        <path d="M92 292c28-48 54-80 80-98" />
-        <path d="M126 297c20-35 41-61 62-80" />
-        <path d="M164 302c16-24 32-44 49-60" />
-      </g>
-      <g>
-        <path
-          d="M120 242c16-28 33-47 54-60"
-          fill="none"
-          stroke="#166534"
-          strokeWidth="5"
-          strokeLinecap="round"
-        />
-        <ellipse cx="150" cy="210" rx="10" ry="23" transform="rotate(-28 150 210)" fill="#22c55e" />
-        <ellipse cx="178" cy="193" rx="9" ry="18" transform="rotate(-24 178 193)" fill="#4ade80" />
-      </g>
-    </svg>
   );
 }
