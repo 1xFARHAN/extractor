@@ -2,12 +2,36 @@
 
 type SearchBarProps = {
   value: string;
+  mode: "name" | "descriptor";
   onChange: (value: string) => void;
+  onModeChange: (value: "name" | "descriptor") => void;
 };
 
-export function SearchBar({ value, onChange }: SearchBarProps) {
+export function SearchBar({ value, mode, onChange, onModeChange }: SearchBarProps) {
   return (
     <div className="space-y-3">
+      <div className="flex flex-wrap items-center gap-4">
+        <label className="inline-flex items-center gap-2 text-sm font-medium text-emerald-900">
+          <input
+            type="radio"
+            name="search-mode"
+            checked={mode === "name"}
+            onChange={() => onModeChange("name")}
+            className="h-4 w-4 border-emerald-300 text-emerald-700 focus:ring-emerald-500"
+          />
+          Name
+        </label>
+        <label className="inline-flex items-center gap-2 text-sm font-medium text-emerald-900">
+          <input
+            type="radio"
+            name="search-mode"
+            checked={mode === "descriptor"}
+            onChange={() => onModeChange("descriptor")}
+            className="h-4 w-4 border-emerald-300 text-emerald-700 focus:ring-emerald-500"
+          />
+          Descriptor
+        </label>
+      </div>
       <div className="relative">
         <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-emerald-500">
           <svg
@@ -30,13 +54,10 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
           type="search"
           value={value}
           onChange={(event) => onChange(event.target.value)}
-          placeholder="Search by name and key descriptor"
+          placeholder={mode === "name" ? "Search by name" : "Search by key descriptor"}
           className="w-full rounded-2xl border border-emerald-200 bg-white py-3 pl-12 pr-4 text-sm text-emerald-950 shadow-sm outline-none transition focus:border-emerald-500"
         />
-      </div>
-      <p className="text-sm text-emerald-800/80">
-        Results appear after a trait search.
-      </p>
+      </div>    
     </div>
   );
 }

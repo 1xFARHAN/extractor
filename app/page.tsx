@@ -19,6 +19,7 @@ const PAGE_SIZE = 20;
 
 export default function HomePage() {
   const [search, setSearch] = useState("");
+  const [searchMode, setSearchMode] = useState<"name" | "descriptor">("descriptor");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [entries, setEntries] = useState<GermplasmEntry[]>([]);
   const [page, setPage] = useState(1);
@@ -52,6 +53,7 @@ export default function HomePage() {
       try {
         const params = new URLSearchParams({
           search: debouncedSearch,
+          mode: searchMode,
           page: String(page),
           limit: String(PAGE_SIZE),
         });
@@ -73,7 +75,7 @@ export default function HomePage() {
     }
 
     loadEntries();
-  }, [debouncedSearch, page]);
+  }, [debouncedSearch, page, searchMode]);
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#dcfce7_0%,transparent_26%),linear-gradient(180deg,#f5fff8_0%,#ecfdf3_40%,#ffffff_100%)]">
@@ -88,7 +90,7 @@ export default function HomePage() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/25 via-transparent to-white/10" />
-            <div className="absolute inset-x-4 top-4 z-10 rounded-2xl bg-white/88 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.14em] text-emerald-950 backdrop-blur sm:inset-x-8 sm:top-8 sm:px-6 sm:py-4 sm:text-lg">
+            <div className="absolute inset-x-3 top-0 z-10 rounded-2xl bg-white/88 px-4 py-3 text-center text-base font-bold uppercase tracking-[0.14em] text-emerald-950 backdrop-blur sm:inset-x-6 sm:top-1 sm:px-6 sm:py-4 sm:text-xl lg:inset-x-8 lg:top-2 lg:px-8 lg:py-5 lg:text-2xl">
               National Crop Genomics and Speed Breeding Centre for Agriculture Sustainability
               (NCG&amp;SBCAS)
             </div>
@@ -96,14 +98,19 @@ export default function HomePage() {
         </section>
 
         <section className="rounded-[2rem] border border-emerald-200/80 bg-white/95 p-4 shadow-[0_20px_60px_-36px_rgba(22,101,52,0.2)] sm:p-6">
-          <SearchBar value={search} onChange={setSearch} />
+          <SearchBar
+            value={search}
+            mode={searchMode}
+            onChange={setSearch}
+            onModeChange={setSearchMode}
+          />
         </section>
 
         {debouncedSearch ? (
           <section className="rounded-[2rem] border border-emerald-200/80 bg-white/95 shadow-[0_20px_60px_-36px_rgba(22,101,52,0.2)]">
             <div className="border-b border-emerald-100 px-4 py-4 sm:px-6">
               <p className="text-base font-semibold text-emerald-950">
-                Showing {entries.length} of {total} records for trait: {debouncedSearch}
+                Showing {entries.length} of {total} records for {searchMode}: {debouncedSearch}
               </p>
             </div>
             <ResultsTable entries={entries} isLoading={isLoading} onRequest={setSelectedEntry} />

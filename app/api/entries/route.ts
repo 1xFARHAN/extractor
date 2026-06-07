@@ -4,11 +4,16 @@ import { prisma } from "@/lib/prisma";
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const search = searchParams.get("search")?.trim() || "";
+  const mode = searchParams.get("mode") === "name" ? "name" : "descriptor";
   const page = Math.max(Number(searchParams.get("page") || 1), 1);
   const limit = Math.max(Number(searchParams.get("limit") || 20), 1);
 
   const where = {
-    ...(search ? { description: { contains: search } } : {}),
+    ...(search
+      ? mode === "name"
+        ? { name: { contains: search } }
+        : { description: { contains: search } }
+      : {}),
   };
 
   const [data, total, typeRows] = await Promise.all([

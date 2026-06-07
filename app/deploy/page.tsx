@@ -71,7 +71,7 @@ export default function DeployPage() {
               Deployment Console
             </span>
             <h1 className="text-4xl font-semibold tracking-tight text-emerald-950 sm:text-5xl">
-              Inauguration ceremory of NCG&amp;SBCAS
+              Inauguration ceremory of   NCG&amp;SBCAS
             </h1>
             <p className="max-w-lg text-sm leading-7 text-emerald-900/72 sm:text-base">
               Start the deployment countdown and return automatically after launch.
