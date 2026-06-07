@@ -55,8 +55,7 @@ export default function DeployPage() {
     }
   }
 
-  const statusLabel =
-    countdown && countdown > 0 ? String(countdown) : isLaunching ? "Launching..." : "Ready";
+  const statusLabel = isLaunching ? "Launching..." : "Ready";
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_right,#dcfce7_0%,transparent_24%),linear-gradient(180deg,#f5fff8_0%,#ecfdf3_45%,#ffffff_100%)] px-4 py-8 sm:px-6 lg:px-8">
@@ -66,19 +65,16 @@ export default function DeployPage() {
             <DeployVectors />
           </div>
 
-          <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center space-y-6 text-center">
+          <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
             <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
               Deployment Console
             </span>
             <h1 className="text-4xl font-semibold tracking-tight text-emerald-950 sm:text-5xl">
-              Inauguration ceremory of   NCG&amp;SBCAS
+              Inauguration ceremory of NCG&amp;SBCAS
             </h1>
-            <p className="max-w-lg text-sm leading-7 text-emerald-900/72 sm:text-base">
-              Start the deployment countdown and return automatically after launch.
-            </p>
 
-            <div className="flex w-full max-w-xl flex-col items-center gap-4 rounded-[1.75rem] border border-emerald-100 bg-emerald-50/60 p-6 shadow-inner shadow-emerald-100/70">
-              <div className="flex w-full flex-col items-center gap-4">
+            <div className="flex w-full max-w-xl flex-col items-center gap-6 rounded-[1.75rem] border border-emerald-100 bg-emerald-50/60 p-8 shadow-inner shadow-emerald-100/70">
+              <div className="flex w-full flex-col items-center gap-6">
                 <div className="text-center">
                   <p className="text-sm font-medium uppercase tracking-[0.2em] text-emerald-700">
                     Status
