@@ -90,7 +90,7 @@ export default function HomePage() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/25 via-transparent to-white/10" />
-            <div className="absolute inset-x-3 top-0 z-10 rounded-2xl bg-white px-4 py-3 text-center text-base font-bold uppercase tracking-[0.14em] text-emerald-950 sm:inset-x-6 sm:top-1 sm:px-6 sm:py-4 sm:text-xl lg:inset-x-8 lg:top-2 lg:px-8 lg:py-5 lg:text-2xl">
+            <div className="absolute inset-x-3 top-0 z-10 rounded-2xl bg-white/70 px-4 py-3 text-center text-base font-bold uppercase tracking-[0.14em] text-emerald-950 sm:inset-x-6 sm:top-0 sm:px-6 sm:py-4 sm:text-xl lg:inset-x-8 lg:top-0 lg:px-8 lg:py-5 lg:text-2xl">
               National Crop Genomics and Speed Breeding Centre for Agriculture Sustainability
               (NCG&amp;SBCAS)
             </div>
