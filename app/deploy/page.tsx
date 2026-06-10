@@ -70,7 +70,7 @@ export default function DeployPage() {
               Deployment Console
             </span>
             <h1 className="text-4xl font-semibold tracking-tight text-emerald-950 sm:text-5xl">
-              Inauguration ceremory of NCG&amp;SBCAS
+              Inauguration: Cotton Germplasm Database
             </h1>
 
             <div className="flex w-full max-w-xl flex-col items-center gap-6 rounded-[1.75rem] border border-emerald-100 bg-emerald-50/60 p-8 shadow-inner shadow-emerald-100/70">
